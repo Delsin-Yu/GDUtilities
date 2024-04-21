@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://4n2py4vdybyh"]
+
+[ext_resource type="Script" path="res://ObjectSpawner/ObjectSpawner_Item.cs" id="1_7wn1c"]
+
+[node name="Item" type="PanelContainer" node_paths=PackedStringArray("_text")]
+auto_translate_mode = 1
+script = ExtResource("1_7wn1c")
+_text = NodePath("MarginContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+auto_translate_mode = 1
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Lorem"

@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="GDUtilities"
-run/main_scene="res://AutoScroller/main.tscn"
+run/main_scene="res://ObjectSpawner/main.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [dotnet]
 
