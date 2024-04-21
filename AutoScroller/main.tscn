@@ -32,10 +32,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-scroll_vertical = 1562
+scroll_vertical = 1719
 script = ExtResource("1_7g6bb")
-scroll_speed = 100
-stay_seconds = 1
 
 [node name="Label" type="Label" parent="Panel/Viewport"]
 custom_minimum_size = Vector2(292, 400)

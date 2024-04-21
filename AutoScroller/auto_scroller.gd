@@ -1,35 +1,54 @@
 @tool
+## Watches the attached [ScrollContainer], 
+## and makes its content do ping-pong action 
+## automatically when exceeds the size of the viewport, 
+## this is an easy and design-wise cheap way for 
+## addressing UI overflow issues when dealing with 
+## the situation when the text becomes larger than it was
+## when designing the UI. 
+## This script also disables user interactions 
+## for the controlled [ScrollContainer].
+
+class_name AutoScroller
 extends ScrollContainer
 
+## The scroll speed, in pixel, 
+## per second when scrolling the contents.
 @export var scroll_speed := 10;
+
+## The duration, in seconds, for
+## auto scroller to stay when reaches 
+## the top/left or the bottom/right side
+## of the viewport.
 @export var stay_seconds := 5;
 
-var h_tween : Tween;
-var v_tween : Tween;
-
-var h_scroll_bar : HScrollBar;
-var v_scroll_bar : VScrollBar;
+var _h_tween : Tween;
+var _v_tween : Tween;
+var _h_scroll_bar : HScrollBar;
+var _v_scroll_bar : VScrollBar;
 
 func _ready() -> void:
-	h_scroll_bar = get_h_scroll_bar();
-	v_scroll_bar = get_v_scroll_bar();
-	init_control(h_scroll_bar);
-	init_control(v_scroll_bar);
-	h_scroll_bar.changed.connect(h);
-	v_scroll_bar.changed.connect(v);
-	init_control(self);
+	_h_scroll_bar = get_h_scroll_bar();
+	_v_scroll_bar = get_v_scroll_bar();
+	
+	_h_scroll_bar.changed.connect(_update_horizontal_metrics);
+	_v_scroll_bar.changed.connect(_update_vertical_metrics);
+	
+	_init_control(_h_scroll_bar);
+	_init_control(_v_scroll_bar);
+	_init_control(self);
 
-func init_control(control:Control) -> void:
+func _init_control(control:Control) -> void:
 	control.focus_mode = Control.FOCUS_NONE;
 	control.mouse_filter = Control.MOUSE_FILTER_IGNORE;
 
-func h() -> void:
-	var content_max := h_scroll_bar.max_value - h_scroll_bar.page;
-	h_tween = _reset_tween(h_tween, content_max, h_scroll_bar);
+func _update_horizontal_metrics() -> void:
+	var content_max := _h_scroll_bar.max_value - _h_scroll_bar.page;
+	_h_tween = _reset_tween(_h_tween, content_max, _h_scroll_bar);
 	
-func v() -> void:
-	var content_max := v_scroll_bar.max_value - v_scroll_bar.page;
-	v_tween = _reset_tween(v_tween, content_max, v_scroll_bar);
+func _update_vertical_metrics() -> void:
+	var content_max := _v_scroll_bar.max_value - _v_scroll_bar.page;
+	_v_tween = _reset_tween(_v_tween, content_max, _v_scroll_bar);
 
 func _reset_tween(tween:Tween, content_max:float, scroll_bar:ScrollBar) -> Tween:
 	if(tween != null): tween.kill();
