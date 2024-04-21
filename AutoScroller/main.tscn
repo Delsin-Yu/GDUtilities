@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjx36tynn5akx"]
+
+[ext_resource type="Script" path="res://AutoScroller/auto_scroller.gd" id="1_7g6bb"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Viewport" type="ScrollContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+scroll_vertical = 1438
+script = ExtResource("1_7g6bb")
+scroll_speed = 100
+stay_seconds = 1
+
+[node name="Label" type="Label" parent="Panel/Viewport"]
+custom_minimum_size = Vector2(292, 400)
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempus urna et pharetra pharetra massa massa ultricies. Eu ultrices vitae auctor eu augue ut. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Aliquet enim tortor at auctor urna nunc id. Quam viverra orci sagittis eu volutpat odio. Sit amet aliquam id diam maecenas ultricies mi eget. Aliquet bibendum enim facilisis gravida neque convallis a. Arcu dictum varius duis at. Id leo in vitae turpis. Risus nullam eget felis eget nunc lobortis mattis aliquam faucibus. Mauris sit amet massa vitae tortor condimentum lacinia quis vel.
+
+Aliquam faucibus purus in massa tempor. Sit amet nulla facilisi morbi tempus iaculis urna id volutpat. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Tincidunt lobortis feugiat vivamus at augue. Tempor orci eu lobortis elementum nibh tellus molestie. Sed risus ultricies tristique nulla aliquet enim tortor at auctor. Quam vulputate dignissim suspendisse in est ante in. Nibh nisl condimentum id venenatis. Habitant morbi tristique senectus et netus et malesuada fames. Sit amet nisl purus in mollis. Nunc sed blandit libero volutpat. Neque volutpat ac tincidunt vitae. In ante metus dictum at tempor commodo ullamcorper a. Tempor orci dapibus ultrices in iaculis nunc sed augue.
+
+Consectetur lorem donec massa sapien. Curabitur vitae nunc sed velit dignissim sodales ut eu sem. Tempor id eu nisl nunc mi. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Ut consequat semper viverra nam libero justo laoreet sit. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Blandit turpis cursus in hac habitasse platea. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Ultricies tristique nulla aliquet enim tortor. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. Donec enim diam vulputate ut. Dignissim enim sit amet venenatis urna cursus. Massa placerat duis ultricies lacus sed turpis tincidunt id aliquet. Sagittis aliquam malesuada bibendum arcu vitae.
+
+Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Lorem ipsum dolor sit amet consectetur adipiscing elit duis. Id aliquet lectus proin nibh nisl. Ut venenatis tellus in metus vulputate. Ut ornare lectus sit amet est placerat in egestas erat. Amet risus nullam eget felis eget. Id neque aliquam vestibulum morbi blandit. Cursus euismod quis viverra nibh. Morbi quis commodo odio aenean sed adipiscing diam donec. Scelerisque varius morbi enim nunc faucibus a pellentesque sit. Donec adipiscing tristique risus nec. Aliquet enim tortor at auctor urna. Malesuada proin libero nunc consequat interdum varius sit amet. Nec feugiat in fermentum posuere urna. Cras pulvinar mattis nunc sed blandit libero volutpat sed cras. Ut ornare lectus sit amet est placerat in.
+
+Et malesuada fames ac turpis egestas integer. Aliquam vestibulum morbi blandit cursus risus. Massa id neque aliquam vestibulum morbi blandit cursus risus. Mi quis hendrerit dolor magna eget est. Elit eget gravida cum sociis natoque penatibus. Posuere sollicitudin aliquam ultrices sagittis. Pharetra et ultrices neque ornare. Sit amet nulla facilisi morbi tempus iaculis urna. Id velit ut tortor pretium viverra suspendisse potenti. Nisl tincidunt eget nullam non nisi est sit. Velit sed ullamcorper morbi tincidunt ornare."
+autowrap_mode = 3
